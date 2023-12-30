@@ -1,0 +1,32 @@
+
+<?php
+// Define the matrices
+$matrix1 = array(
+    array(1, 2, 3),
+    array(4, 5, 6),
+    array(7, 8, 9)
+);
+$matrix2 = array(
+    array(9, 8, 7),
+    array(6, 5, 4),
+    array(3, 2, 1)
+);
+
+// Function to add two matrices
+function addMatrices($matrix1, $matrix2) {
+    $result = array();
+    for ($i = 0; $i < count($matrix1); $i++) {
+        $row = array();
+        for ($j = 0; $j < count($matrix1[$i]); $j++) {
+            $sum = $matrix1[$i][$j] + $matrix2[$i][$j];
+            array_push($row, $sum);
+        }
+        array_push($result, $row);
+    }
+    return $result;
+}
+
+// Call the function and print the result
+$resultMatrix = addMatrices($matrix1, $matrix2);
+print_r($resultMatrix);
+?>
